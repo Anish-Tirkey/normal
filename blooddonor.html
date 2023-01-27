@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="blooddonor.css">
+<body>
+    <header>
+        <div class="topheader">
+            <h1>Blood Donor</h1>
+        </div>
+      </header>
+    <div id="signup-form">
+        <h1>Sign Up</h1>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Enter your name" name="name" required>
+            <br>
+            <label for="mobile">Mobile Number:</label>
+            <input type="tel" id="mobile" placeholder="Enter your mobile number" name="mobile" pattern="[0-9]{10}" required>
+            <br>
+            <label for="aadhar">Aadhaar Number:</label>
+            <input type="tel" id="aadhar" value="" placeholder="Enter your aadhar number" name="aadhar" pattern="[0-9]{12}" required>
+            <br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Enter password" name="password" required>
+            <br>
+            <input type="submit" value="Sign Up">
+        </form> 
+    </div> 
+
+    <div class="ha-an-ac">
+        <p id="ha-an-ac-id">Have an account? <a href="blooddonorlogin.html">Login</a></p>
+    </div>
+   <script>
+    // get form element
+const form = document.getElementById('signup-form');
+
+// form submit event
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  // get form data
+  const name = form.name.value;
+  const mobileNumber = form.mobileNumber.value;
+  const aadharNumber = form.aadharNumber.value;
+  const password = form.password.value;
+
+  // validate form data
+  // check if mobile number is valid
+  if(!validateMobileNumber(mobileNumber)) {
+    alert("Invalid mobile number");
+    return;
+  }
+  // check if aadhar number is valid
+  if(!validateAadharNumber(aadharNumber)) {
+    alert("Invalid aadhar number");
+    return;
+  }
+  // check if password is valid
+  if(!validatePassword(password)) {
+    alert("Invalid password");
+    return;
+  }
+
+  // send form data to server
+  // ...
+
+  // show success message
+  alert("Successfully signed up!");
+});
+
+// validate mobile number function
+function validateMobileNumber(number) {
+  // write code to validate mobile number
+  // return true if valid, false if invalid
+}
+
+// validate aadhar number function
+function validateAadharNumber(number) {
+  // write code to validate aadhar number
+  // return true if valid, false if invalid
+}
+
+// validate password
+
+   </script>
+</body>
+</html>

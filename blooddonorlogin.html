@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="blooddonorlogin.css">
+<body>
+    <header>
+        <div class="topheader">
+            <h1>Blood Donor</h1>
+        </div>
+    </header>
+
+    <div id="login-form">
+        <h1>Login</h1>
+            <form>
+                <label for="mobile">Mobile Number:</label>
+                <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" required>
+                <br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <br>
+                <button type="submit" onclick="verifyLogin()">Log In</button>
+            </form>
+        </div>
+        <div class="ha-an-ac">
+            <p id="ha-an-ac-id">don't have an account? <a href="blooddonor.html">Signup</a></p>
+        </div>
+</body>
+<script>
+    function verifyLogin() {
+  // Get mobile number and password from form
+  var mobileNumber = document.getElementById("mobile-number").value;
+  var password = document.getElementById("password").value;
+
+  // Connect to MongoDB and check if mobile number and password match
+  var MongoClient = require('mongodb').MongoClient;
+  var url = "mongodb://localhost:27017/";
+
+  MongoClient.connect(url, function(err, db) 
+  {
+
+    // if (err) throw err;
+    // var dbo = db.db("mydb");
+    // var query = { mobileNumber: mobileNumber, password: password };
+    // dbo.collection("users").find(query).toArray(function(err, result) {
+    //   if (err) throw err;
+    //   if (result.length > 0) {
+    //     // Mobile number and password match, log in
+    //     console.log("Logged in successfully!");
+    //   } else {
+    //     // Mobile number and password do not match, show error message
+    //     console.log("Incorrect mobile number or password.");
+    //   }
+      db.close();
+    });
+  };
+
+
+</script>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="newemployee.css">
+</head>
+<body>
+    <header>
+        <div class="topheader">
+            <h1>Blood Donor</h1>
+        </div>
+    </header>
+
+    <div id="create-form">
+        <h1>Create new blood bank Account</h1>
+        <form>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <br><br>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+      
+</body>
+<script>
+    const form = document.querySelector("form");
+    form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const username = document.querySelector("#username").value;
+    const password = document.querySelector("#password").value;
+    console.log("Username:", username);
+    console.log("Password:", password);
+});
+
+</script>
+</html>

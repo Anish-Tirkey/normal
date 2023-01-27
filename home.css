@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+header {
+    display: block;
+    height: 80px;
+    border-bottom: 1px solid #d3d4de;
+    background: #ffde2f;
+    box-shadow: 0 2px 8px 1px rgb(0 0 0 / 20%);
+  }
+.topheader{    
+    text-align: center;
+    margin: 0;   
+    top: 50%;
+    left: 50%;
+}
+h1{
+    padding: 20px;
+}
+.bg-image{
+    /* height: 80vh;
+    width: 100%; */
+    object-fit: cover;
+    justify-content: end;
+} 
+ 
